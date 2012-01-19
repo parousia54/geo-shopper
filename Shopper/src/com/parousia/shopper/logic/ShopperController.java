@@ -1,8 +1,8 @@
 package com.parousia.shopper.logic;
 
-import com.parousia.shopper.network.ShopperCommunicator;
-
 import android.app.Application;
+
+import com.parousia.shopper.network.ShopperCommunicator;
 
 public class ShopperController extends Application {
 

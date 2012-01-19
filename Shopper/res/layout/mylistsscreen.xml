@@ -4,17 +4,15 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background">
-
-    <GridView
-        android:id="@+id/menugrid"
-        android:layout_width="fill_parent"
+    <ListView
+        android:id="@+id/mylists"
         android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_marginTop="65dp"
-        android:gravity="center_horizontal"
-        android:horizontalSpacing="20dp"
-        android:numColumns="auto_fit"
-        android:padding="5dp"
-        android:verticalSpacing="5dp">
-    </GridView>
-
+        android:divider="@android:drawable/divider_horizontal_dark"
+        android:isScrollContainer="true"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent">
+       
+    </ListView>
 </LinearLayout>
