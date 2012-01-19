@@ -8,7 +8,7 @@
         android:name=".logic.ShopperController"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
             android:name=".view.ShopperSplashScreen"
             android:label="@string/app_name"
@@ -24,6 +24,12 @@
             android:label="@string/menu_screen"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".view.ShopperMyListsScreen"
+            android:label="@string/mylists_screen"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 </manifest>

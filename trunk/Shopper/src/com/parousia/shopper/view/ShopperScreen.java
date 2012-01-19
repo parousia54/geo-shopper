@@ -7,7 +7,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-public class ShopperScreen extends Activity implements ShopperScreenUpdater{
+public class ShopperScreen extends Activity implements ShopperScreenUpdater {
 
 	private ProgressDialog progress;
 	private String dialogMessage = "", dialogTitle = "";
@@ -27,7 +27,6 @@ public class ShopperScreen extends Activity implements ShopperScreenUpdater{
 		// TODO Auto-generated method stub
 		super.onResume();
 	}
-
 
 	@Override
 	public void update(Object data) {

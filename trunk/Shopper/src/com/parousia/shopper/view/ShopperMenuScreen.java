@@ -3,12 +3,14 @@ package com.parousia.shopper.view;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -20,6 +22,8 @@ import com.parousia.shopper.R;
 public class ShopperMenuScreen extends ShopperScreen {
 
 	private static String LOGTAG = "MenuScreen";
+	private final int MYLISTITEM = 0;
+	private final int MYLOCATIONITEM = 1;
 
 	@Override
 	protected void onCreate(Bundle bundle) {
@@ -28,6 +32,35 @@ public class ShopperMenuScreen extends ShopperScreen {
 
 		GridView menuGrid = (GridView) findViewById(R.id.menugrid);
 		menuGrid.setAdapter(new CustomAdapter(this));
+
+		menuGrid.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				navigate(position);
+			}
+
+		});
+
+	}
+
+	private void navigate(int position) {
+
+		Intent intent;
+
+		switch (position) {
+		case MYLISTITEM:
+			intent = new Intent(ShopperMenuScreen.this,
+					ShopperMyListsScreen.class);
+			startActivity(intent);
+			break;
+		case MYLOCATIONITEM:
+			intent = new Intent(ShopperMenuScreen.this,
+					ShopperMyLocationsScreen.class);
+			startActivity(intent);
+			break;
+		}
 
 	}
 
@@ -39,8 +72,8 @@ public class ShopperMenuScreen extends ShopperScreen {
 		private int[] menuItemIconArray;
 
 		// references to our images
-		private Integer[] mThumbIds = { R.drawable.ic_list, 
-										R.drawable.ic_location};
+		private Integer[] mThumbIds = { R.drawable.ic_list,
+				R.drawable.ic_location };
 
 		public CustomAdapter(Context c) {
 			mContext = c;
@@ -88,9 +121,10 @@ public class ShopperMenuScreen extends ShopperScreen {
 			imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 			imageView.setPadding(2, 2, 2, 2);
 			imageView.setImageResource(mThumbIds[position]);
+			imageView.setContentDescription(menuItemTxtArray.get(position));
 			textView = new TextView(mContext);
 			textView.setText(menuItemTxtArray.get(position));
-			textView.setTypeface(Typeface.MONOSPACE,Typeface.BOLD);
+			textView.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
 			textView.setGravity(Gravity.CENTER_HORIZONTAL);
 			tileLayout.addView(imageView);
 			tileLayout.addView(textView);

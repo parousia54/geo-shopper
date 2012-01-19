@@ -1,10 +1,10 @@
 package com.parousia.shopper.view;
 
-import com.parousia.shopper.R;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
+
+import com.parousia.shopper.R;
 
 public class ShopperSplashScreen extends ShopperScreen {
 
