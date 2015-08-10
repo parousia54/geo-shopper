@@ -1,0 +1,1 @@
+This application built for the Android OS looks at providing a platform for the users to consolidate, collaborate and share house expenses using one's mobile phones/tablet. It also aims at using location based services to push alerts reminding one about the various to-buy lists.
